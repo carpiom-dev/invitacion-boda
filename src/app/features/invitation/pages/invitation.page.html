@@ -1,9 +1,18 @@
 <inv-hero-section
-  [bride]="config.couple.bride"
-  [groom]="config.couple.groom"
+  [bride]="bride"
+  [groom]="groom"
   [dateLabel]="config.date.label"
   [targetIso]="config.date.iso"
   [venueName]="config.venue.name"
   [venueAddress]="config.venue.address"
   [mapsUrl]="config.venue.mapsUrl">
 </inv-hero-section>
+
+<inv-schedule-section
+  [timeline]="config.timeline"
+  [palette]="config.dressCode.paletteHex">
+</inv-schedule-section>
+<inv-gifts-section
+  [accounts]="config.gifts.accounts"
+  [rsvpUrl]="config.gifts.rsvpUrl">
+</inv-gifts-section>

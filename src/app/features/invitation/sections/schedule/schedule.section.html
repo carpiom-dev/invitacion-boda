@@ -1,0 +1,35 @@
+<section class="schedule">
+  <div class="schedule__frame">
+    <div class="schedule__content">
+      <h2 class="title-script">El Gran día</h2>
+
+      <div class="timeline">
+        <div class="row" *ngFor="let item of timeline">
+          <div class="time">{{ item.time }}</div>
+          <div class="event">{{ item.title }}</div>
+        </div>
+      </div>
+
+      <h2 class="title-script mt-lg">Código de vestimenta</h2>
+      <p class="dress">Formal</p>
+
+      <div class="icons">
+        <span>🤵</span>
+        <span>👗</span>
+      </div>
+
+      <p class="note">
+        Evita utilizar colores reservados para los novios como <b>BLANCO</b>
+      </p>
+
+      <div class="palette">
+        <span *ngFor="let c of palette" [style.background]="c"></span>
+      </div>
+
+      <div class="no-kids">
+        <p>Queremos que disfrutes al máximo,<br>amablemente te solicitamos:</p>
+        <strong>NO NIÑOS</strong>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+<section class="gifts">
+  <div class="gifts__frame">
+    <div class="gifts__content">
+
+      <h2 class="title-script">Sugerencia de regalo</h2>
+
+      <p class="gift-text">
+        Si deseas hacernos un regalo, agradeceríamos mucho cualquier contribución,
+        ya sea en forma de dinero o un detalle de nuestra mesa de regalos en sobre.
+        <br><br>
+        Sin embargo, lo que más valoramos es tu presencia y apoyo en este día tan especial.
+      </p>
+
+      <h3 class="subtitle">Número de cuentas:</h3>
+
+      <div class="account" *ngFor="let acc of accounts">
+        <img class="bank-icon" [src]="acc.icon" [alt]="acc.bank" />
+
+        <div class="bank">{{ acc.bank }}</div>
+        <div class="detail">{{ acc.type }}</div>
+        <div class="detail"><b>{{ acc.number }}</b></div>
+        <div class="detail">{{ acc.name }}</div>
+        <div class="detail small">CI: {{ acc.id }}</div>
+      </div>
+
+      <p class="thanks">
+        Gracias por ser parte de nuestra<br>
+        historia de amor
+      </p>
+
+      <div class="rsvp">
+        <p class="remember">Recuerda la fecha</p>
+        <p class="confirm">Confirma tu asistencia:</p>
+
+        <a class="rsvp-button" [href]="rsvpUrl" target="_blank">
+          Confirmar Asistencia
+        </a>
+      </div>
+
+      <p class="farewell">¡Nos vemos en la pista!</p>
+
+    </div>
+  </div>
+</section>

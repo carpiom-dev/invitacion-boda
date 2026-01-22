@@ -1,7 +1,11 @@
 <section class="hero">
   <div class="hero__frame">
-    <!-- botón reproducir (arriba) -->
-    <button class="music" type="button" (click)="toggleMusic()" [class.music--on]="playing">
+
+    <button
+      class="music"
+      type="button"
+      (click)="toggleMusic($event)"
+      [class.music--on]="playing">
       <span class="music__pill">reproducir</span>
       <span class="music__icon" aria-hidden="true">♪</span>
     </button>
@@ -46,9 +50,9 @@
     </div>
 
     <!-- decoración inferior (iconitos) -->
-    <div class="footer-icons" aria-hidden="true">
+    <!--<div class="footer-icons" aria-hidden="true">
       <span class="footer-icons__cam">📷</span>
       <span class="footer-icons__heels">👠</span>
-    </div>
+    </div>-->
   </div>
 </section>

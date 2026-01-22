@@ -13,7 +13,11 @@
   --radius-xl: 22px;
 }
 
-html, body { height: 100%; }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
 body {
   margin: 0;
@@ -25,3 +29,7 @@ body {
 * { box-sizing: border-box; }
 
 a { color: inherit; }
+
+section {
+  display: block;
+}
