@@ -1,0 +1,117 @@
+.schedule {
+  width: 100vw;
+  background: #fbf7f2;
+  display: grid;
+  place-items: center;
+}
+
+.schedule__frame {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-image: url("../../../../../assets/img/schedule.png");
+  background-size: cover;
+  background-position: center top;
+  overflow: hidden;
+}
+
+/* CONTENIDO INTERNO */
+.schedule__content {
+  position: relative;
+  padding: 90px 22px 100px;
+  text-align: center;
+}
+
+/* TÍTULOS */
+.title-script {
+  font-family: var(--font-script);
+  font-size: 42px;
+  margin-bottom: 36px;
+}
+
+.mt-lg {
+  margin-top: 90px;
+}
+
+/* TIMELINE */
+.timeline {
+  display: grid;
+  row-gap: 18px;
+  margin-bottom: 80px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  font-size: 15px;
+}
+
+.time {
+  font-weight: 600;
+}
+
+.event {
+  text-align: left;
+}
+
+/* VESTIMENTA */
+.dress {
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-size: 30px;
+  margin: 18px 0;
+}
+
+.note {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-top: 12px;
+}
+
+/* PALETA */
+.palette {
+  display: grid;
+  grid-template-columns: repeat(4, 44px);
+  gap: 10px;
+  justify-content: center;
+  margin: 28px 0 80px;
+}
+
+.palette span {
+  width: 44px;
+  height: 44px;
+}
+
+/* NO NIÑOS */
+.no-kids p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.no-kids strong {
+  display: block;
+  margin-top: 14px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 767px) {
+  .schedule__frame {
+    width: 100%;
+  }
+}
+
+/* 💻 DESKTOP — MISMO ANCHO QUE HERO */
+@media (min-width: 768px) {
+  .schedule__frame {
+    width: 425px;   // 👈 MISMO QUE .hero__frame
+    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+  }
+}

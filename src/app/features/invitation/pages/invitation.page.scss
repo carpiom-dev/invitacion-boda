@@ -31,3 +31,62 @@
   border: 1px solid rgba(0, 0, 0, 0.06);
   text-align: left;
 }
+.music-fab {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 18px);
+  right: 18px;
+  z-index: 9999;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  background: rgba(126, 168, 230, 0.95);
+  color: white;
+
+  display: grid;
+  place-items: center;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+/* ICONO */
+.music-fab .icon {
+  font-size: 20px;
+  animation: pulseIdle 2.5s infinite;
+}
+
+/* CUANDO ESTÁ REPRODUCIENDO */
+.music-fab.playing {
+  background: rgba(145, 156, 140, 0.95);
+}
+
+.music-fab.playing .icon {
+  animation: spin 2.2s linear infinite;
+}
+
+/* HOVER DESKTOP */
+@media (hover: hover) {
+  .music-fab:hover {
+    transform: scale(1.08);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* ANIMACIONES */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulseIdle {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.12); opacity: 1; }
+}

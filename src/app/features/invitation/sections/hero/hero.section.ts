@@ -1,44 +1,70 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CountdownComponent } from '../../components/countdown/countdown.component';
 
 @Component({
   selector: 'inv-hero-section',
   standalone: true,
-  imports: [CommonModule,CountdownComponent],
+  imports: [CommonModule, CountdownComponent],
   templateUrl: './hero.section.html',
   styleUrl: './hero.section.scss',
 })
-export class HeroSection {
+export class HeroSection implements AfterViewInit {
   @Input({ required: true }) bride!: string;
   @Input({ required: true }) groom!: string;
   @Input({ required: true }) dateLabel!: string;
   @Input({ required: true }) targetIso!: string;
-
   @Input({ required: true }) venueName!: string;
   @Input({ required: true }) venueAddress!: string;
   @Input({ required: true }) mapsUrl!: string;
 
-  audio?: HTMLAudioElement;
+  private audio?: HTMLAudioElement;
   playing = false;
+  private initialized = false;
 
-  ngOnInit() {
-    // Si no quieres música aún, comenta esto.
-    // Requiere: src/assets/audio/song.mp3
-    try {
+  ngAfterViewInit() {
+    const unlock = () => {
+      if (this.initialized) return;
+
       this.audio = new Audio('assets/audio/song.mp3');
       this.audio.loop = true;
       this.audio.volume = 0.6;
-    } catch {
-      this.audio = undefined;
-    }
+
+      this.audio.play()
+        .then(() => {
+          this.playing = true;
+          this.initialized = true;
+          cleanup();
+        })
+        .catch(() => {
+          // navegador aún bloquea
+        });
+    };
+
+    const cleanup = () => {
+      window.removeEventListener('touchstart', unlock);
+      window.removeEventListener('click', unlock);
+      window.removeEventListener('scroll', unlock);
+    };
+
+    window.addEventListener('touchstart', unlock, { once: true });
+    window.addEventListener('click', unlock, { once: true });
+    window.addEventListener('scroll', unlock, { once: true });
   }
 
-  toggleMusic() {
+  toggleMusic(event?: Event) {
+    event?.stopPropagation(); // 👈 MUY IMPORTANTE
+
     if (!this.audio) return;
-    if (this.playing) this.audio.pause();
-    else void this.audio.play();
-    this.playing = !this.playing;
+
+    if (this.audio.paused) {
+      this.audio.play()
+        .then(() => this.playing = true)
+        .catch(() => this.playing = false);
+    } else {
+      this.audio.pause();
+      this.playing = false;
+    }
   }
 
   openMaps() {
