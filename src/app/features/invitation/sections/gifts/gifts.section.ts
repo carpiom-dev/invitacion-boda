@@ -18,5 +18,11 @@ export class GiftsSection {
     icon: string;
   }[];
 
+  accountsVisible = false;
+
   @Input({ required: true }) rsvpUrl!: string;
+
+  toggleAccounts() {
+    this.accountsVisible = !this.accountsVisible;
+  }
 }

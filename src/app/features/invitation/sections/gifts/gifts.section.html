@@ -13,15 +13,25 @@
 
       <h3 class="subtitle">Número de cuentas:</h3>
 
-      <div class="account" *ngFor="let acc of accounts">
-        <img class="bank-icon" [src]="acc.icon" [alt]="acc.bank" />
+      <button class="rsvp-button" (click)="toggleAccounts()">
+        @if (!accountsVisible) {
+          <span>Ver cuentas</span>
+        }
+        @if (accountsVisible) {
+              <span>Ocultar cuentas</span>
+        }
+      </button>
 
-        <div class="bank">{{ acc.bank }}</div>
-        <div class="detail">{{ acc.type }}</div>
-        <div class="detail"><b>{{ acc.number }}</b></div>
-        <div class="detail">{{ acc.name }}</div>
-        <div class="detail small">CI: {{ acc.id }}</div>
-      </div>
+      @if (accountsVisible) {
+        <div class="account" *ngFor="let acc of accounts">
+          <img class="bank-icon" [src]="acc.icon" [alt]="acc.bank" />
+          <div class="bank">{{ acc.bank }}</div>
+          <div class="detail">{{ acc.type }}</div>
+          <div class="detail"><b>{{ acc.number }}</b></div>
+          <div class="detail">{{ acc.name }}</div>
+          <div class="detail small">CI: {{ acc.id }}</div>
+        </div>
+      }
 
       <p class="thanks">
         Gracias por ser parte de nuestra<br>
