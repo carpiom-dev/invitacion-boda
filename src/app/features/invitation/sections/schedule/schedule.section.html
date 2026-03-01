@@ -1,6 +1,24 @@
 <section class="schedule">
   <div class="schedule__frame">
     <div class="schedule__content">
+
+      <div class="ceremony">
+        <h2 class="title-script">Ceremonia religiosa</h2>
+        <h2 class="title-script">&</h2>
+        <h2 class="title-script">Recepción</h2>
+      </div>
+
+      <div class="venue">
+        <div class="venue__name">{{ venueName }}</div>
+        <div class="venue__time">05:00 PM</div>
+        <div class="venue__addr">{{ venueAddress }}</div>
+      </div>
+
+      <button class="maps" type="button" (click)="openMaps()">
+        <span class="maps__pin" aria-hidden="true">📍</span>
+        <span>Ver ubicación</span>
+      </button>
+
       <h2 class="title-script">El Gran día</h2>
 
       <div class="timeline">

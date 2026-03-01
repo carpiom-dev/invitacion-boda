@@ -18,7 +18,7 @@
 /* CONTENIDO INTERNO */
 .schedule__content {
   position: relative;
-  padding: 90px 22px 100px;
+  padding: 10px 22px 100px;
   text-align: center;
 }
 
@@ -114,4 +114,43 @@
     width: 425px;   // 👈 MISMO QUE .hero__frame
     box-shadow: 0 30px 80px rgba(0,0,0,0.15);
   }
+}
+
+.ceremony {
+  margin-top: 18px;
+  font-family: var(--font-script);
+  font-size: 26px;
+  line-height: 1.05;
+  opacity: 0.95;
+
+  .ceremony__and { font-size: 18px; margin: 6px 0; }
+}
+
+.venue {
+  margin-top: 18px;
+  font-size: 11px;
+  opacity: 0.9;
+
+  .venue__name { font-weight: 600; }
+  .venue__time { margin-top: 8px; }
+  .venue__addr { margin-top: 8px; }
+}
+
+.maps {
+  margin: 18px auto 0;
+  border: 0;
+  cursor: pointer;
+  background: #0B3D91;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+
+  font-size: 13px;
+  text-decoration: underline;
+
+  &:active { transform: translateY(1px); }
 }

@@ -29,6 +29,10 @@
         <div class="guest-adm">Admisiones: {{ admissions }}</div>
       </div>
 
+      <div class="couple-photo">
+        <img src="assets/img/couple.jpg" alt="Foto de la pareja" loading="lazy" />
+      </div>
+
       <p class="blessing">Con la bendición de Dios y de nuestros padres</p>
 
       <p class="invite">
@@ -41,23 +45,6 @@
       <div class="date">{{ dateLabel }}</div>
 
       <inv-countdown [targetIso]="targetIso"></inv-countdown>
-
-      <div class="ceremony">
-        <div class="ceremony__line">Ceremonia religiosa</div>
-        <div class="ceremony__and">y</div>
-        <div class="ceremony__line">Recepción</div>
-      </div>
-
-      <div class="venue">
-        <div class="venue__name">{{ venueName }}</div>
-        <div class="venue__time">05:00 PM</div>
-        <div class="venue__addr">{{ venueAddress }}</div>
-      </div>
-
-      <button class="maps" type="button" (click)="openMaps()">
-        <span class="maps__pin" aria-hidden="true">📍</span>
-        <span>Ver ubicación</span>
-      </button>
     </div>
   </div>
 </section>

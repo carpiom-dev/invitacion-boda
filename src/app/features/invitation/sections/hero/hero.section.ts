@@ -14,9 +14,6 @@ export class HeroSection implements AfterViewInit {
   @Input({ required: true }) groom!: string;
   @Input({ required: true }) dateLabel!: string;
   @Input({ required: true }) targetIso!: string;
-  @Input({ required: true }) venueName!: string;
-  @Input({ required: true }) venueAddress!: string;
-  @Input({ required: true }) mapsUrl!: string;
   @Input() admissions = 1;
   private audio?: HTMLAudioElement;
   playing = false;
@@ -65,9 +62,5 @@ export class HeroSection implements AfterViewInit {
       this.audio.pause();
       this.playing = false;
     }
-  }
-
-  openMaps() {
-    window.open(this.mapsUrl, '_blank', 'noopener,noreferrer');
   }
 }

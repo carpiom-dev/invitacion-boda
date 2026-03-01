@@ -11,4 +11,12 @@ import { CommonModule } from '@angular/common';
 export class ScheduleSection {
   @Input({ required: true }) timeline!: { time: string; title: string }[];
   @Input({ required: true }) palette!: string[];
+  @Input({ required: true }) venueName!: string;
+  @Input({ required: true }) venueAddress!: string;
+  @Input({ required: true }) mapsUrl!: string;
+
+
+  openMaps() {
+    window.open(this.mapsUrl, '_blank', 'noopener,noreferrer');
+  }
 }
