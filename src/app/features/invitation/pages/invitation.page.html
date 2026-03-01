@@ -3,15 +3,15 @@
   [groom]="groom"
   [admissions]="admissions"
   [dateLabel]="config.date.label"
-  [targetIso]="config.date.iso"
-  [venueName]="config.venue.name"
-  [venueAddress]="config.venue.address"
-  [mapsUrl]="config.venue.mapsUrl">
+  [targetIso]="config.date.iso">
 </inv-hero-section>
 
 <inv-schedule-section
   [timeline]="config.timeline"
-  [palette]="config.dressCode.paletteHex">
+  [palette]="config.dressCode.paletteHex"
+  [venueName]="config.venue.name"
+  [venueAddress]="config.venue.address"
+  [mapsUrl]="config.venue.mapsUrl">
 </inv-schedule-section>
 <inv-gifts-section
   [accounts]="config.gifts.accounts"
