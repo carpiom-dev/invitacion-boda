@@ -6,7 +6,8 @@ export class InvitationConfigService {
   readonly config: InvitationConfig = {
     couple: {
       bride: 'Madelin Maruri R.',
-      groom: 'Ruben Montaño F.'
+      groom: 'Ruben Montaño F.',
+      Adm: 1
     },
 
     date: {
@@ -21,10 +22,10 @@ export class InvitationConfigService {
     },
 
     timeline: [
-      { time: '05:00 PM', title: 'Ceremonia religiosa' },
-      { time: '07:00 PM', title: 'Recepción de invitados' },
-      { time: '07:30 PM', title: 'Entrada de los novios y brindis' },
-      { time: '08:00 PM', title: 'Banquete' },
+      { time: '04:30 PM', title: 'Recepción de invitados' },
+      { time: '05:30 PM', title: 'Entrada de los novios y brindis' },
+      { time: '06:00 PM', title: 'Ceremonia religiosa' },
+      { time: '07:00 PM', title: 'Banquete' },
       { time: '08:30 PM', title: 'Vals de los novios' },
       { time: '09:00 PM', title: 'Lanzamiento del ramo' },
       { time: '09:30 PM', title: 'Hora del baile' },

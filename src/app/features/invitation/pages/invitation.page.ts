@@ -5,6 +5,7 @@ import { InvitationConfigService } from '../../../core/services/invitation-confi
 import { HeroSection } from '../sections/hero/hero.section';
 import { ScheduleSection } from '../sections/schedule/schedule.section';
 import { GiftsSection } from '../sections/gifts/gifts.section';
+import { FooterComponent } from '../sections/footer/footer';
 
 @Component({
   selector: 'app-invitation-page',
@@ -21,7 +22,7 @@ export class InvitationPage {
 
   bride = this.config.couple.bride;
   groom = this.config.couple.groom;
-
+  admissions = this.config.couple.Adm;
   constructor() {
     this.route.queryParamMap.subscribe(params => {
       this.bride =
@@ -33,6 +34,13 @@ export class InvitationPage {
         params.get('groom')
           ? decodeURIComponent(params.get('groom')!)
           : this.config.couple.groom;
+
+      const admRaw = params.get('adm');
+      console.log('admRaw', admRaw);
+      const adm = admRaw ? Number(admRaw) : NaN;
+      console.log('adm', adm);
+      this.admissions = Number.isFinite(adm) && adm > 0 ? Math.floor(adm) : 1;
+      console.log('admissions', this.admissions);
     });
   }
 }

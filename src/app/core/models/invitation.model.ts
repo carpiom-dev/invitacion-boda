@@ -2,6 +2,7 @@ export interface InvitationConfig {
   couple: {
     bride: string;
     groom: string;
+    Adm: number;
   };
 
   date: {
