@@ -17,7 +17,7 @@ export class HeroSection implements AfterViewInit {
   @Input({ required: true }) venueName!: string;
   @Input({ required: true }) venueAddress!: string;
   @Input({ required: true }) mapsUrl!: string;
-
+  @Input() admissions = 1;
   private audio?: HTMLAudioElement;
   playing = false;
   private initialized = false;

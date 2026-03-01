@@ -11,11 +11,23 @@
     </button>
 
     <div class="hero__content">
+
       <h1 class="names">
-        <span>{{ groom }}</span>
+        <span>Madelin Maruri R.</span>
         <span class="amp">&amp;</span>
-        <span>{{ bride }}</span>
+        <span>Ruben Montaño F.</span>
       </h1>
+
+      <p class="invite">
+        Te esperamos para celebrar juntos el día de nuestra boda, donde queremos compartir con todos nuestros seres queridos este
+        momento especial para nosotros.
+      </p>
+
+      <div class="guest-block">
+        <div class="guest-label">Invitación para:</div>
+        <div class="guest-name">{{ groom }} & {{ bride }}</div>
+        <div class="guest-adm">Admisiones: {{ admissions }}</div>
+      </div>
 
       <p class="blessing">Con la bendición de Dios y de nuestros padres</p>
 
@@ -28,7 +40,6 @@
 
       <div class="date">{{ dateLabel }}</div>
 
-      <!-- countdown (estilo caja blanca con 4 columnas) -->
       <inv-countdown [targetIso]="targetIso"></inv-countdown>
 
       <div class="ceremony">

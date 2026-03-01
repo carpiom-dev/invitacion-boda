@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from '../footer/footer';
 
 @Component({
   selector: 'inv-gifts-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FooterComponent],
   templateUrl: './gifts.section.html',
   styleUrl: './gifts.section.scss',
 })
