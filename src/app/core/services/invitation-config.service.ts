@@ -23,7 +23,7 @@ export class InvitationConfigService {
 
     timeline: [
       { time: '04:30 PM', title: 'Recepción de invitados' },
-      { time: '05:30 PM', title: 'Entrada de los novios y brindis' },
+      { time: '05:30 PM', title: 'Entrada de los novios' },
       { time: '06:00 PM', title: 'Ceremonia religiosa' },
       { time: '07:00 PM', title: 'Banquete' },
       { time: '08:30 PM', title: 'Vals de los novios' },
