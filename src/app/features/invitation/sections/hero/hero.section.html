@@ -1,11 +1,7 @@
 <section class="hero">
   <div class="hero__frame">
 
-    <button
-      class="music"
-      type="button"
-      (click)="toggleMusic($event)"
-      [class.music--on]="playing">
+    <button class="music" type="button" (click)="toggleMusic($event)" [class.music--on]="playing">
       <span class="music__pill">reproducir</span>
       <span class="music__icon" aria-hidden="true">♪</span>
     </button>
@@ -19,18 +15,32 @@
       </h1>
 
       <p class="invite">
-        Te esperamos para celebrar juntos el día de nuestra boda, donde queremos compartir con todos nuestros seres queridos este
+        Te esperamos para celebrar juntos el día de nuestra boda, donde queremos compartir con todos nuestros seres
+        queridos este
         momento especial para nosotros.
       </p>
 
       <div class="guest-block">
         <div class="guest-label">Invitación para:</div>
-        <div class="guest-name">{{ groom }} & {{ bride }}</div>
+        <div class="guest-name">
+          {{ groom }}
+          @if(bride !== ''){
+          &
+          }
+          {{ bride }}</div>
         <div class="guest-adm">Admisiones: {{ admissions }}</div>
       </div>
 
-      <div class="couple-photo">
-        <img src="assets/img/couple.jpg" alt="Foto de la pareja" loading="lazy" />
+      <div class="slideshow-wrapper">
+        <div class="couple-photo">
+          <img [src]="photos[activeSlide]" [class.fade-out]="fadingOut" alt="Foto de la pareja" loading="lazy" />
+        </div>
+        <div class="slideshow-dots">
+          @for (p of photos; track $index) {
+          <button class="dot" [class.dot--active]="$index === activeSlide" (click)="goToSlide($index)"
+            [attr.aria-label]="'Foto ' + ($index + 1)"></button>
+          }
+        </div>
       </div>
 
       <p class="blessing">Con la bendición de Dios y de nuestros padres</p>

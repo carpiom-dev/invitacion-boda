@@ -28,12 +28,12 @@ export class InvitationPage {
       this.bride =
         params.get('bride')
           ? decodeURIComponent(params.get('bride')!)
-          : this.config.couple.bride;
+          : '';
 
       this.groom =
         params.get('groom')
           ? decodeURIComponent(params.get('groom')!)
-          : this.config.couple.groom;
+          : '';
 
       const admRaw = params.get('adm');
       console.log('admRaw', admRaw);

@@ -1,15 +1,15 @@
-import { Component, Input, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input, AfterViewInit, OnDestroy } from '@angular/core';
+
 import { CountdownComponent } from '../../components/countdown/countdown.component';
 
 @Component({
   selector: 'inv-hero-section',
   standalone: true,
-  imports: [CommonModule, CountdownComponent],
+  imports: [CountdownComponent],
   templateUrl: './hero.section.html',
   styleUrl: './hero.section.scss',
 })
-export class HeroSection implements AfterViewInit {
+export class HeroSection implements AfterViewInit, OnDestroy {
   @Input({ required: true }) bride!: string;
   @Input({ required: true }) groom!: string;
   @Input({ required: true }) dateLabel!: string;
@@ -19,7 +19,18 @@ export class HeroSection implements AfterViewInit {
   playing = false;
   private initialized = false;
 
+  // ── Slideshow ──────────────────────────────────────────────
+  photos = [
+    'assets/img/foto1.jpeg',
+    'assets/img/foto2.jpeg',
+    'assets/img/foto3.jpeg',
+  ];
+  activeSlide = 0;
+  fadingOut = false;
+  private slideInterval?: ReturnType<typeof setInterval>;
+
   ngAfterViewInit() {
+    this.startSlideshow();
     const unlock = () => {
       if (this.initialized) return;
 
@@ -62,5 +73,31 @@ export class HeroSection implements AfterViewInit {
       this.audio.pause();
       this.playing = false;
     }
+  }
+
+  // ── Slideshow helpers ──────────────────────────────────────
+  private startSlideshow() {
+    this.slideInterval = setInterval(() => this.nextSlide(), 4000);
+  }
+
+  nextSlide() {
+    this.fadingOut = true;
+    setTimeout(() => {
+      this.activeSlide = (this.activeSlide + 1) % this.photos.length;
+      this.fadingOut = false;
+    }, 500); // duración del fade-out
+  }
+
+  goToSlide(i: number) {
+    if (i === this.activeSlide) return;
+    this.fadingOut = true;
+    setTimeout(() => {
+      this.activeSlide = i;
+      this.fadingOut = false;
+    }, 500);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.slideInterval);
   }
 }

@@ -50,34 +50,34 @@ export class InvitationConfigService {
       ]
     },
 
-gifts: {
-  accounts: [
-    {
-      bank: 'Banco Bolivariano',
-      type: 'Cuenta de Ahorros',
-      number: '1821059695',
-      name: 'Ruben Bryan Montaño Freire',
-      id: '0932024110',
-      icon: 'assets/img/banks/bolivariano.png'
-    },
-    {
-      bank: 'Banco Guayaquil',
-      type: 'Cuenta de Ahorros',
-      number: '0017656282',
-      name: 'Maruri Rodriguez Madelin Jazmany',
-      id: '0944140078',
-      icon: 'assets/img/banks/guayaquil.jpg'
-    },
-    {
-      bank: 'Banco Pichincha',
-      type: 'Cuenta de Ahorros',
-      number: '2204989453',
-      name: 'Maruri Rodriguez Madelin Jazmany',
-      id: '0944140078',
-      icon: 'assets/img/banks/pichincha.png'
+    gifts: {
+      accounts: [
+        {
+          bank: 'Banco Bolivariano',
+          type: 'Cuenta de Ahorros',
+          number: '1821059695',
+          name: 'Ruben Bryan Montaño Freire',
+          id: '0932024110',
+          icon: 'assets/img/banks/bolivariano.png'
+        },
+        {
+          bank: 'Banco Guayaquil',
+          type: 'Cuenta de Ahorros',
+          number: '0017656282',
+          name: 'Maruri Rodriguez Madelin Jazmany',
+          id: '0944140078',
+          icon: 'assets/img/banks/guayaquil.jpg'
+        },
+        {
+          bank: 'Banco Pichincha',
+          type: 'Cuenta de Ahorros',
+          number: '2204989453',
+          name: 'Maruri Rodriguez Madelin Jazmany',
+          id: '0944140078',
+          icon: 'assets/img/banks/pichincha.png'
+        }
+      ],
+      rsvpUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSf21hAF1Dl6ld9TVQGbKvIje1_W437RfaLDyftzyQCiq5590g/viewform?usp=header'
     }
-  ],
-  rsvpUrl: 'https://wa.me/593999999999'
-}
   };
 }
